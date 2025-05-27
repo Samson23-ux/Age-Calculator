@@ -8,8 +8,6 @@ const yearInput = document.querySelector("#year-input");
 const validDate = document.createElement("p")
 validDate.classList.add("valid_day")
 
-
-
 button.addEventListener("click", validateInput)
 
 // A function to validate the input fields
@@ -74,14 +72,14 @@ function validateInput() {
     if ((Number(monthInput.value) === 4 || Number(monthInput.value) === 6 || Number(monthInput.value) === 9 || Number(monthInput.value) === 11) && dayInput.value > 30) {
         validDate.innerHTML = "<em>Must be a valid<br> day of the month</em>"
         dayInput.insertAdjacentElement("afterend", validDate)
-        monthInput.style.border = "1px solid red"
+        dayInput.style.border = "1px solid red"
         label[1].style.color = "red"
         return;
 
     } else if (Number(monthInput.value) === 2 && dayInput.value > 28) {
-        validDate.innerHTML = "<em>Must be a valid<br> day of the month</em>"
+        validDate.innerHTML = "<em>Must be a valid day</em>"
         dayInput.insertAdjacentElement("afterend", validDate)
-        monthInput.style.border = "1px solid red"
+        dayInput.style.border = "1px solid red"
         label[1].style.color = "red"
         return;
     }
