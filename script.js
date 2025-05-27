@@ -80,7 +80,7 @@ function validateInput() {
         validDate.innerHTML = "<em>Must be a valid day</em>"
         dayInput.insertAdjacentElement("afterend", validDate)
         dayInput.style.border = "1px solid red"
-        label[1].style.color = "red"
+        label[0].style.color = "red"
         return;
     }
 
@@ -183,4 +183,3 @@ function calculateAgeInDays() {
         return new Date(year, month, 0).getDate()
     }
 }
-
