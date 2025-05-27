@@ -77,10 +77,10 @@ function validateInput() {
         return;
 
     } else if (Number(monthInput.value) === 2 && dayInput.value > 28) {
-        validDate.innerHTML = "<em>Must be a valid day</em>"
+        validDate.innerHTML = "<em>Must be a valid day of<br> the month</em>"
         dayInput.insertAdjacentElement("afterend", validDate)
         dayInput.style.border = "1px solid red"
-        label[0].style.color = "red"
+        label[1].style.color = "red"
         return;
     }
 
@@ -101,27 +101,34 @@ const dayText = document.querySelector("#dd-line");
 function calculateAgeInMonth() {
     if (!input[0].value || !input[1].value || !input[2].value) {
         return
-    }
-    if (monthInput.value > month + 1) {
+    } else if (Number(monthInput.value) > month + 1) {
         const userMonth = (monthInput.value - (month));
         const userYear = year - yearInput.value - 1;
         yearText.textContent = userYear
         monthText.textContent = 12 - userMonth;
 
-    } else if (monthInput.value < month + 1) {
-        const userMonth = ((month + 1) - monthInput.value) - 1;
+        if (Number(dayInput.value <= day)) {
+            monthText.textContent = (12 - userMonth) + 1;
+        }
+
+    } else if (Number(monthInput.value) < month + 1) {
+        const userMonth = ((month + 1) - monthInput.value);
         const userYear = year - yearInput.value;
         yearText.textContent = userYear
         monthText.textContent = userMonth;
-    }
 
-    if (Number(monthInput.value) === month + 1 && Number(dayInput.value) === day) {
+        if (Number(dayInput.value > day)) {
+            monthText.textContent = userMonth - 1;
+        }
+
+    } else if (Number(monthInput.value) === (month + 1) && Number(dayInput.value) === day) {
         const userYear = year - yearInput.value;
         yearText.textContent = userYear
         monthText.textContent = 0
         dayText.textContent = 0
         return;
     }
+
 
     calculateAgeInDays();
 }
@@ -160,7 +167,7 @@ function calculateAgeInDays() {
 
         if (birthMonth === 3 || birthMonth === 5 || birthMonth === 8) {
             days = getDaysInMonth(birthYear, month);
-            const userDay = ((days + day) - birthDay);
+            const userDay = ((days + day) - birthDay) + 1;
             dayText.textContent = userDay;
         }
 
@@ -178,7 +185,6 @@ function calculateAgeInDays() {
         monthText.textContent = 0;
         yearText.textContent = year - yearInput.value;
     }
-
     function getDaysInMonth(year, month) {
         return new Date(year, month, 0).getDate()
     }
