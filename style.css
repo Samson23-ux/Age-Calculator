@@ -142,7 +142,7 @@ h2 {
 
     .container {
         width: 85%;
-        margin-top: 15vh;
+        margin-top: 13.5vh;
         border-bottom-right-radius: 8rem;
     }
 
@@ -157,7 +157,7 @@ h2 {
     }
 
     input {
-        width: 92%;
+        width: 95%;
         height: 6vh;
         font-size: 2.2rem;
     }
