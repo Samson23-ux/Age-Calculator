@@ -1,0 +1,192 @@
+:root {
+    --body-color: #f0f0f0;
+    --text-color: #844afe;
+    --placeholder-color: #787878;
+    --input-border-color: #e0dddd;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    background-color: var(--body-color);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--input-border-color);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-left: -2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+    height: 35rem;
+    margin: 10rem auto 0;
+    background-color: white;
+    border-radius: 1.8rem;
+    border-bottom-right-radius: 13rem;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-section {
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+    width: 90%;
+    margin-left: 3.2rem;
+    height: 11.5rem;
+}
+
+hr {
+    width: 85%;
+    position: relative;
+    border: 1px solid var(--input-border-color);
+}
+
+input {
+    width: 7.8rem;
+    height: 3.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input-border-color);
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+}
+
+input::placeholder {
+    color: var(--placeholder-color);
+    font-size: 2rem;
+    font-weight: 700;
+    padding-left: 0.5rem;
+}
+
+input:hover {
+    border: 1px solid var(--text-color);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--text-color);
+}
+
+label {
+    color: var(--placeholder-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.1rem;
+}
+
+button {
+    background-color: var(--text-color);
+    border-radius: 100px;
+    border: none;
+    width: 5.5rem;
+    height: 5.5rem;
+    position: relative;
+    float: right;
+    top: -3.5rem;
+    left: -2.8rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+h2 {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-top: -3.8rem;
+    margin-left: 2.8rem;
+    line-height: 6.5rem;
+}
+
+#yy-line,
+#mm-line,
+#dd-line {
+    color: var(--text-color);
+}
+
+.valid_day {
+    width: 82%;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    color: red;
+}
+
+
+@Media screen and (max-width: 600px) and (min-width: 360px) {
+    header {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    .container {
+        width: 85%;
+        margin-top: 15vh;
+        border-bottom-right-radius: 8rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .input-section {
+        width: 80%;
+        gap: 1rem;
+        margin-left: 2.5rem;
+    }
+
+    input {
+        width: 85%;
+        height: 6vh;
+        font-size: 2.2rem;
+    }
+
+    hr {
+        width: 85%;
+    }
+
+    input::placeholder {
+        font-size: 60%;
+        padding-left: 0;
+    }
+
+    button {
+        width: 4rem;
+        height: 4rem;
+        left: -43%;
+        top: -2.48rem;
+    }
+
+    button img {
+        width: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 12vw;
+        margin-top: -3rem;
+    }
+}

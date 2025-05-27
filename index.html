@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="icon" href="./assets/images/11120538_fi_brands_c_icon.png" type="image/png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./assets/fonts/Poppins-Bold.ttf">
+</head>
+
+<body>
+    <header>
+        <h1>Age Calculator</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form">
+                <div class="input-section">
+                    <div>
+                        <label for="day-input">Day</label> <br>
+                        <input id="day-input" type="number" placeholder="DD" />
+                    </div>
+
+                    <div>
+                        <label for="month-input">Month</label><br>
+                        <input id="month-input" type="number" placeholder="MM" />
+                    </div>
+
+                    <div>
+                        <label for="year-input">Year</label><br>
+                        <input id="year-input" type="number" placeholder="YYYY" />
+                    </div>
+                </div>
+                <div class="submit">
+                    <hr>
+                    <button id="submit-button">
+                        <img src="./assets/images/icon-arrow.svg" />
+                    </button>
+                </div>
+            </div>
+
+            <div class="age">
+                <h2 class="years"><span id="yy-line">--</span><em>years</em><br>
+                    <span id="mm-line">--</span><em>months</em><br>
+                    <span id="dd-line">--</span><em>days</em>
+                </h2>
+                <!-- <h2 class="months"><span id="line">--</span> months</h2>
+                <h2 class="days"><span id="line">--</span> days</h2> -->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
