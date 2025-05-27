@@ -131,6 +131,9 @@ function calculateAgeInMonth() {
 
 
     calculateAgeInDays();
+    input.forEach((inp) => {
+        inp.value = ""
+    })
 }
 
 
