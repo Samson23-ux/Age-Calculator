@@ -137,6 +137,7 @@ h2 {
 
     header h1 {
         font-size: 2.4rem;
+        margin-left: -1.8rem;
     }
 
     .container {
@@ -156,7 +157,7 @@ h2 {
     }
 
     input {
-        width: 85%;
+        width: 86%;
         height: 6vh;
         font-size: 2.2rem;
     }
@@ -173,7 +174,7 @@ h2 {
     button {
         width: 4rem;
         height: 4rem;
-        left: -43%;
+        left: -42%;
         top: -2.48rem;
     }
 
