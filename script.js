@@ -188,6 +188,9 @@ function calculateAgeInDays() {
         monthText.textContent = 0;
         yearText.textContent = year - yearInput.value;
     }
+
+    //Function to get the number of days in the previous
+      month of the current month 
     function getDaysInMonth(year, month) {
         return new Date(year, month, 0).getDate()
     }
