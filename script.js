@@ -141,10 +141,10 @@ function calculateAgeInMonth() {
 
 // Function to calculate the age in days
 function calculateAgeInDays() {
-    let days;
     const birthDay = Number(dayInput.value);
     const birthMonth = Number(monthInput.value);
     const birthYear = Number(yearInput.value);
+    let days = getDaysInMonth(birthYear, month)
 
     // Adjusting days based on the day input
     if (birthDay === day) {
@@ -152,24 +152,16 @@ function calculateAgeInDays() {
 
         // Adjusting days for February
     } else if ((birthMonth === 2) && day < birthDay) {
-        days = getDaysInMonth(birthYear, month);
-        const userDay = (days + day) - birthDay;
+        const userDay = (days + day) - birthDay - 1;
         dayText.textContent = userDay;
 
-        // Adjusting the days and months for months with 30 days
-    } else if ((birthMonth === 4 || birthMonth === 6 || birthMonth === 9 || birthMonth === 11) && birthDay > day) {
-        days = getDaysInMonth(birthYear, month);
-        const userDay = (days + day) - birthDay;
-        dayText.textContent = userDay;
-
-        // Adjusting the day text for months with 31 days
     } else if (birthDay > day) {
-        days = getDaysInMonth(birthYear, month);
-        const userDay = ((days + day) - birthDay) + 1;
+        console.log(days)
+        const userDay = (days + day) - birthDay;
         dayText.textContent = userDay;
 
-        if (birthMonth === 3 || birthMonth === 5 || birthMonth === 8) {
-            days = getDaysInMonth(birthYear, month);
+        //Adjust days if previous month is 30
+        if (birthDay > day && days === 30) {
             const userDay = ((days + day) - birthDay) + 1;
             dayText.textContent = userDay;
         }
@@ -189,8 +181,7 @@ function calculateAgeInDays() {
         yearText.textContent = year - yearInput.value;
     }
 
-    //Function to get the number of days in the previous
-      month of the current month 
+    //Function to get the number of days in the previous month of the current month
     function getDaysInMonth(year, month) {
         return new Date(year, month, 0).getDate()
     }
